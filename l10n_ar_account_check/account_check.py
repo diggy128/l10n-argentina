@@ -75,7 +75,7 @@ class account_issued_check(models.Model):
         # Buscamos la cuenta contable para el asiento del cheque
         # Esta cuenta se corresponde con la cuenta de banco de donde
         # pertenece el cheque
-        account_id = self.account_bank_id.account_id.id
+        account_id = self.account_bank_id.check_account_id.id
         if not account_id:
             raise osv.except_osv(_("Error"), _("Bank Account has no account configured. Please, configure an account for the bank account used for checks!"))
 
